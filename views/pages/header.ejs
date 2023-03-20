@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Aesthetics View Crowd Test</title>
+  <meta name="description" content="Aesthetics View Crowd Test">
+  <meta name="author" content="Steve Goering">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="/static/css/style.css">
+  <script type="text/javascript" src="/static/js/code.js"></script>
+
+  <script type="text/javascript">
+  function check_screensize(event) {
+      var w = window.innerWidth;
+      var h = window.innerHeight;
+      if (w < 1100 || h < 500) {
+
+          var e = document.getElementById("screensize_error");
+          e.style.display = "block";
+          event.preventDefault();
+      }
+  }
+
+  </script>
+
+</head>
+
+<body class="text-center">
+
+<div class="cover-container d-flex h-100 w-100 p-3 mx-auto flex-column">
+
+<header class="masthead mb-auto">
+  <div class="inner">
+    <h3 class="masthead-brand"><a class="home-link" href="/">Aesthetics</a></h3>
+    <nav class="nav nav-masthead justify-content-center">
+      <a class="nav-link" href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+
+<main role="main" class="inner cover">

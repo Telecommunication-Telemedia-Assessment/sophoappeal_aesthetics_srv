@@ -1,0 +1,132 @@
+<%- include('header'); -%>
+<h3 class="cover-heading" style="margin-bottom:1em">Please fill in the following fields before we start.</h3>
+
+<section style="margin-bottom:-1em">
+<div class="row align-items-center justify-content-center">
+  <div class="col-6">
+    <form id="demographics" action="/questionnaire" method="post" class="form-group">
+
+    <div class="input-group">
+      <span class="input-group-addon" id="sizing-addon2" style="width: 350px; white-space: nowrap; padding-top: 10px; padding-bottom:2em">What is your age?</span>
+      <select name="userAgeRange" class="form-control" required>
+        <option value="">&nbsp;</option>
+        <option value="< 18">&lt; 18</option>
+        <option value="18 to 24">18 to 24</option>
+        <option value="25 to 29">25 to 29</option>
+        <option value="30 to 39">30 to 39</option>
+        <option value="40 to 49">40 to 49</option>
+        <option value="50 to 59">50 to 59</option>
+        <option value="60 to 69">60 to 69</option>
+        <option value="70+">70+</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <span class="input-group-addon" id="sizing-addon2" style="width: 350px; white-space: nowrap; padding-top: 10px; padding-bottom:2em">How good is your vision?</span>
+      <select name="userEyeQuality" class="form-control" required>
+        <option value="">&nbsp;</option>
+        <option value="Excellent(5)">Excellent</option>
+        <option value="Good(4)">Good</option>
+        <option value="Fair(3)">Fair</option>
+        <option value="Poor(2)">Poor</option>
+        <option value="Bad(1)">Bad</option>
+        <option value="Hard(0)">Hard to say</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <span class="input-group-addon" id="sizing-addon2" style="width: 350px; white-space: nowrap; padding-top: 10px; padding-bottom:2em">Which option best describes your environment?</span>
+      <select name="userRoomQuality" class="form-control" required>
+        <option value="">&nbsp;</option>
+        <option value="Alone in a Quiet Room">Alone in a Quiet Room</option>
+        <option value="Some Noise and Distractions">Some Noise and Distractions</option>
+        <option value="Significant Noise and Distractions">Significant Noise and Distractions</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <span class="input-group-addon" id="sizing-addon2" style="width: 350px; white-space: nowrap; padding-top: 10px; padding-bottom:2em">What type of device are you now using?</span>
+      <select name="userComputerType" class="form-control" required>
+        <option value="">&nbsp;</option>
+        <option value="Phone">Phone</option>
+        <option value="Tablet">Tablet</option>
+        <option value="Laptop">Laptop</option>
+        <option value="Desktop">Desktop</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <input type="hidden" id="screen_size" name="screen_size" placeholder="screen_size" />
+      <input type="hidden" id="browser_agent" name="browser_agent" placeholder="browser_agent" />
+    </div>
+    </form>
+  </div>
+</div>
+
+</section>
+
+<section>
+<hr>
+<p>
+On the following pages you are ask to rate photos according to their visual appeal.</p>
+<p>
+For this a <text style="color:yellow">&#9733;</text>-rating is used, with:
+</p>
+
+<div class="row align-items-center justify-content-center">
+  <table class="ratingtable table col-4">
+    <tr>
+      <td><text style="color:yellow">&#9733;</text>&#9733;&#9733;&#9733;&#9733;</td>
+      <td>= not appealing</td>
+    </tr>
+    <tr>
+      <td><text style="color:yellow">&#9733;&#9733;</text>&#9733;&#9733;&#9733;</td>
+      <td>= low appealing</td>
+    </tr>
+    <tr>
+      <td><text style="color:yellow">&#9733;&#9733;&#9733;</text>&#9733;&#9733;</td>
+      <td>= medium appealing</td>
+    </tr>
+    <tr>
+      <td><text style="color:yellow">&#9733;&#9733;&#9733;&#9733;</text>&#9733;</td>
+      <td>= appealing</td>
+    </tr>
+    <tr>
+      <td><text style="color:yellow">&#9733;&#9733;&#9733;&#9733;&#9733;</text></td>
+      <td>= highly appealing</td>
+    </tr>
+  </table>
+</div>
+
+<p>
+Such types of ratings are highly subjective, thus you cannot rate wrong, it all depends on your opinion.
+</p>
+<p>
+Appeal can be defined as "the quality of being attractive or interesting".
+</p>
+
+<div>
+  <button type="submit" class="btn-primary" form="demographics">OK</button>
+</div>
+
+<% if (lab_test) { %>
+<div style="margin-top:1em">
+user id: <%=uuid_short %>
+</div>
+
+<% } %>
+</section>
+
+<script>
+(function() {
+    document.getElementById("screen_size").value = window.innerWidth + "x" + window.innerHeight;
+    document.getElementById("browser_agent").value = navigator.userAgent;
+})();
+
+</script>
+<% for(var i=0; i < images.length ; i++) {%>
+    <link rel="prefetch" href="/<%= images[i] %>" as="image">
+<% } %>
+
+<%- include('footer'); -%>
+

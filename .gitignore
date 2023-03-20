@@ -1,0 +1,5 @@
+node_modules
+db.sqlite
+dev
+static/images/
+static/images_data.zip

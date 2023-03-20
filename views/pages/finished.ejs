@@ -1,0 +1,79 @@
+<%- include('header'); -%>
+
+
+<h1 class="cover-heading">You are finished with the test.</h1>
+<p class="lead">Thank you for taking part in the study.
+</p>
+<p class="lead">The software and test are part of the DFG Project SoPhoAppeal (DFG-437543412).
+</p>
+<p class="lead">
+Further information can be found on the <a class="textlink" href="https://wwwalt.tu-ilmenau.de/en/audio-visual-technology/research/dfg-project-sophoappeal/" target="_blank">project webpage</a>.
+</p>
+<hr>
+
+
+
+<% if(clickworker) { %>
+
+    <p class="lead">
+    Thank you.
+    </p>
+    <% if (user_completed) { %>
+        <hr>
+        <p class="lead">
+        The required code for clickworker is the following:
+        <h2><%=clickworker_key %></h2>
+        </p>
+        <p class="lead">
+        You need to copy this code and paste it to the corresponding form inside clickworker.com, otherwise the payment will not work.
+        </p>
+    <% } %>
+
+<% } else { %>
+    <% if(lab_test) { %>
+        <p class="lead">
+        <form id="next" action="/rc" method="get" class="form-group">
+        	<button type="submit" class="btn-primary">next participant</button>
+        </form>
+
+        </p>
+    
+    <% } else { %>
+        <p class="lead">
+        If you want to have a chance of winning a 10€ voucher, please fill in the following form.
+        </p>
+        <p class="lead">
+        This is <strong>voluntary</strong>, and we need your email address to contact you later.
+        </p>
+        <p class="lead">
+        The winners will be announced at the <%= end_date %>.
+        </p>
+        <hr>
+
+        <% if(winningform) { %>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4">
+                <form id="winning" action="/finished" method="post" class="form-group">
+                    <input type="email" class="form-control" name="email_address" placeholder="Email" required>
+                    <input class="form-check-input" type="checkbox" name="agree" required>
+                    <label class="form-check-label" for="agree">
+                      I agree that my email address is used to contact me later.
+                    </label><br/>
+                    <input type="hidden" value=<%= uuid %> name="uuid" />
+                    <button type="submit" class="btn-primary" >OK</button>
+                </form>
+            </div>
+        </div>
+
+        <% } else { %>
+        <p class="lead">
+        Thank you.
+        </p>
+        <% } %>
+    <% } %>
+
+<% } %>
+
+
+<%- include('footer'); -%>
+

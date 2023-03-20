@@ -1,0 +1,39 @@
+<%- include('header'); -%>
+
+<section>
+<div id="screensize_error" class="alert alert-danger" style="display:none">
+  Your browser window is not large enough, please maximize your window.
+</div>
+<h1 class="cover-heading">Welcome.</h1>
+<% if(lab_test) { %>
+<p class="lead">This is a lab test considering appeal and aesthetics of images.</p>
+<% } else { %>
+<p class="lead">This is a crowd sourcing test considering appeal and aesthetics of images.</p>
+<% } %>
+<p class="lead">As next, you will be asked for some demographic information and later you are asked to rate aesthetics of several shown images.</p>
+<p class="lead">Please answer as intuitively as possible. </p>
+<p class="lead">Please maximize your browser window. </p>
+<p class="lead">You can do at any time a break and continue later. </p>
+
+
+<a class="btn btn-large btn-primary" href="/questionnaire" onclick="check_screensize(event)" id="start">Get started</a>
+</section>
+
+<section>
+<hr>
+<h2> About this test </h2>
+<p>The context of this test is to evaluate image appeal to develop and evaluate prediction models.</p>
+<p>For any more questions please contact: Steve Göring (email: <a class="textlink" href="mailto:steve.goering@tu-ilmenau.de">steve.goering@tu-ilmenau.de</a>)
+</p>
+<p>
+  This test is part of the following initiative <a class="textlink" href="https://wwwalt.tu-ilmenau.de/en/audio-visual-technology/research/dfg-project-sophoappeal/" target="_blank">DFG-437543412</a>.
+</p>
+
+<p>We collect the ratings/likes and answers to the questions.</p>
+<p>In addition, we collect data about the used browser (browser agent) and size of the used browser window for analysis purposes.</p>
+<p>All data is stored in <strong>anonymized form</strong>.</p>
+<p>For management purposes this page uses cookies.</p>
+</section>
+
+<%- include('footer'); -%>
+

@@ -1,0 +1,17 @@
+version: '3'
+services:
+  app:
+    build: .
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - "127.0.0.1:9994:9999"
+    depends_on:
+      - database
+    links:
+      - database
+
+  database:
+    image: "mongo"
