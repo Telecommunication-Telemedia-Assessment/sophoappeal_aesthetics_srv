@@ -32,15 +32,21 @@ Furthermore, get the images that are required for the app, using the
 ## Development Database
 To run the sever for development purposes, you need to have a mongo database running locally (localhost with default ports and no password).
 
+## Configuration
+The `const config = {` part in `app.js` can be used to configure different views and other parts.
+
 
 ## Start the server
-To start the server in development mode run:
+To start the server in development mode run (a mongo db running is required): 
 ```bash
 npm start
 ```
 
+and then open http://localhost:9999/
+
 ## Deployment
 For deployment use `docker-compose up` to setup the service.
+Port 9994 will be used.
 
 
 
