@@ -8,6 +8,7 @@ This repository is part of the DFG project [Sophoappeal (437543412)](https://www
 
 This tool is used to collect appeal ratings in all tests (lab and crowd).
 
+![](aesthetics_view_rating.png)
 
 ## Requirements
 * nodejs,
