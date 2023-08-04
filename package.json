@@ -19,7 +19,7 @@
     "file-set": "^4.0.1",
     "md5": "^2.3.0",
     "mongodb": "^3.6.3",
-    "mongoose": "^5.11.10",
+    "mongoose": "^5.13.20",
     "nodemailer": "^6.6.0",
     "shuffle-array": "^1.0.1",
     "sqlite3": "^4.2.0",
